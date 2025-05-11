@@ -1,5 +1,6 @@
 function Header() {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
+  const [showTooltip, setShowTooltip] = React.useState(false);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -9,7 +10,29 @@ function Header() {
     <header className="header" data-id="8swn8sjkl" data-path="scripts/components.js">
       <div className="container" data-id="ll6dt6jdg" data-path="scripts/components.js">
         <nav className="nav" data-id="jcn9cdh6o" data-path="scripts/components.js">
-          <div className="logo" data-id="ub6pknzpk" data-path="scripts/components.js">ABL</div>
+          <a 
+            href="https://www.linkedin.com/in/adrianblascolozano" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="logo-link"
+            onMouseEnter={() => setShowTooltip(true)}
+            onMouseLeave={() => setShowTooltip(false)}
+          >
+            <div className="logo-container" data-id="ub6pknzpk" data-path="scripts/components.js">
+              <img 
+                src="/assets/icons/data-analyst-icon.png" 
+                alt="Data Analyst Logo" 
+                className="logo-icon"
+                style={{ width: '32px', height: '32px' }}
+              />
+              {showTooltip && (
+                <div className="logo-tooltip">
+                  <span>¡Conecta conmigo en LinkedIn!</span>
+                  <div className="tooltip-arrow"></div>
+                </div>
+              )}
+            </div>
+          </a>
           <div className={`menu-toggle ${isMenuOpen ? 'active' : ''}`} onClick={toggleMenu} data-id="tcwalw1d3" data-path="scripts/components.js">
             <div className="bar" data-id="c85f8sypj" data-path="scripts/components.js"></div>
             <div className="bar" data-id="779yj7cqm" data-path="scripts/components.js"></div>

@@ -1,7 +1,7 @@
 /* Header Styles */
 .header {
   background-color: var(--dark);
-  padding: 1rem 0;
+  padding: 0.5rem 0;
   position: fixed;
   width: 100%;
   top: 0;
@@ -13,6 +13,38 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 0.25rem 0;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.logo-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  transition: transform 0.3s ease;
+  padding: 3px;
+  background-color: transparent;
+  border-radius: 6px;
+}
+
+.logo-container:hover {
+  transform: scale(1.05);
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.logo-icon {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+  transition: all 0.3s ease;
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.logo-icon:hover {
+  filter: brightness(0) invert(0.8); /* Efecto hover más suave */
 }
 
 .logo {
@@ -24,10 +56,12 @@
 .nav-links {
   display: flex;
   list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 .nav-links li {
-  margin-left: 2rem;
+  margin-left: 1.5rem;
 }
 
 .nav-links a {
@@ -45,13 +79,14 @@
   display: none;
   flex-direction: column;
   cursor: pointer;
+  padding: 4px;
 }
 
 .bar {
-  width: 25px;
-  height: 3px;
+  width: 22px;
+  height: 2px;
   background-color: var(--light);
-  margin: 3px 0;
+  margin: 2px 0;
   transition: var(--transition-speed);
 }
 
@@ -481,4 +516,73 @@
     height: 250px;
     border-width: 3px;
   }
+}
+
+/* Ajustamos el nav para asegurar que el logo tenga espacio */
+.nav .logo-container {
+  min-width: 32px;
+  min-height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Logo Link Styles */
+.logo-link {
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.logo-link:hover {
+  text-decoration: none;
+}
+
+/* Tooltip Styles */
+.logo-tooltip {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--dark);
+  color: var(--light);
+  padding: 8px 12px;
+  border-radius: 4px;
+  font-size: 0.875rem;
+  white-space: nowrap;
+  z-index: 1000;
+  margin-top: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  animation: tooltipFadeIn 0.2s ease;
+}
+
+.tooltip-arrow {
+  position: absolute;
+  top: -6px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-bottom: 6px solid var(--dark);
+}
+
+@keyframes tooltipFadeIn {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -10px);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+}
+
+/* Ajuste para el hover del logo */
+.logo-link:hover .logo-container {
+  transform: scale(1.05);
+  background-color: rgba(255, 255, 255, 0.1);
 }
