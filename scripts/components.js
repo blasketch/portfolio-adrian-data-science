@@ -34,13 +34,30 @@ function Hero() {
       <DataParticles containerId="hero-particles" />
       <div className="container" data-id="kf1dqvrz4" data-path="scripts/components.js">
         <div className="hero-content" data-id="lt20pk9de" data-path="scripts/components.js">
-          <h1 className="hero-title" data-id="6kz1timh5" data-path="scripts/components.js">
-            Hola, soy <span className="highlight" data-id="ptncw9aix" data-path="scripts/components.js">Adrian Blasco Lozano</span>
-          </h1>
-          <h2 className="hero-subtitle" data-id="27svytih5" data-path="scripts/components.js">
-            <TypedText text="Analista de Datos enfocado en transformar datos en insights accionables" speed={50} />
-          </h2>
-          <a href="#projects" className="btn" data-id="1nh09tw5i" data-path="scripts/components.js">Ver mis proyectos <i className="fas fa-arrow-right" data-id="ezu1z87nx" data-path="scripts/components.js"></i></a>
+          <div className="hero-grid">
+            <div className="hero-text">
+              <h1 className="hero-title" data-id="6kz1timh5" data-path="scripts/components.js">
+                Hola, soy <span className="highlight" data-id="ptncw9aix" data-path="scripts/components.js">Adrian Blasco Lozano</span>
+              </h1>
+              <h2 className="hero-subtitle" data-id="27svytih5" data-path="scripts/components.js">
+                <TypedText text="Analista de Datos enfocado en transformar datos en insights accionables" speed={50} />
+              </h2>
+              <a href="#projects" className="btn" data-id="1nh09tw5i" data-path="scripts/components.js">Ver mis proyectos <i className="fas fa-arrow-right" data-id="ezu1z87nx" data-path="scripts/components.js"></i></a>
+            </div>
+            <div className="hero-image-container">
+              <div className="profile-image-wrapper">
+                <img 
+                  src="/assets/images/profile.jpg" 
+                  alt="Adrian Blasco Lozano" 
+                  className="profile-image"
+                  onError={(e) => {
+                    e.target.onerror = null;
+                    e.target.src = 'https://via.placeholder.com/400x400?text=Tu+Imagen';
+                  }}
+                />
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>);
