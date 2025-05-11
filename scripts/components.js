@@ -114,17 +114,22 @@ function About() {
           <FadeInSection delay={0.4}>
             <div className="about-image-container" data-id="7pukayx3b" data-path="scripts/components.js">
               <img 
-                src="https://images.unsplash.com/photo-1677442136019-21780ecad995?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" 
-                alt="Machine Learning and AI Engineering" 
+                src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" 
+                alt="Visualización de Redes Neuronales y Deep Learning" 
                 className="about-image"
                 data-id="p06yzdw78" 
                 data-path="scripts/components.js"
                 onError={(e) => {
                   e.target.onerror = null;
-                  e.target.src = 'https://images.unsplash.com/photo-1620712943543-bcc4688e7485?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80';
+                  e.target.src = 'https://images.unsplash.com/photo-1635070041078-e363dbe005cb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80';
                 }}
               />
-              <div className="about-image-overlay"></div>
+              <div className="about-image-overlay">
+                <div className="about-image-caption">
+                  <span className="caption-icon"><i className="fas fa-brain"></i></span>
+                  <span className="caption-text">Arquitecturas de Deep Learning & Redes Neuronales</span>
+                </div>
+              </div>
             </div>
           </FadeInSection>
         </div>
