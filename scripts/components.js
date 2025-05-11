@@ -63,7 +63,10 @@ function Hero() {
                 Hola, soy <span className="highlight" data-id="ptncw9aix" data-path="scripts/components.js">Adrian Blasco Lozano</span>
               </h1>
               <h2 className="hero-subtitle" data-id="27svytih5" data-path="scripts/components.js">
-                <TypedText text="Analista de Datos enfocado en transformar datos en insights accionables" speed={50} />
+                <TypedText 
+                  text="Machine Learning Engineer especializado en desarrollo e implementación de modelos de IA" 
+                  speed={50} 
+                />
               </h2>
               <a href="#projects" className="btn" data-id="1nh09tw5i" data-path="scripts/components.js">Ver mis proyectos <i className="fas fa-arrow-right" data-id="ezu1z87nx" data-path="scripts/components.js"></i></a>
             </div>
@@ -98,13 +101,13 @@ function About() {
           <FadeInSection delay={0.2}>
             <div className="about-content" data-id="4wjklnhc0" data-path="scripts/components.js">
               <p data-id="r1mu3qj48" data-path="scripts/components.js">
-                Soy un analista de datos apasionado por descubrir insights valiosos en conjuntos complejos de información. Mi enfoque combina habilidades técnicas con una fuerte capacidad analítica para transformar datos en historias comprensibles y accionables.
+                Soy un Machine Learning Engineer apasionado por desarrollar e implementar soluciones de IA que resuelven problemas reales. Mi experiencia abarca desde el desarrollo de modelos de deep learning hasta la implementación de sistemas de ML en producción, con un enfoque especial en la escalabilidad y eficiencia de los modelos.
               </p>
               <p className="mt-4" data-id="up05uznqt" data-path="scripts/components.js">
-                Mi experiencia abarca el análisis estadístico, visualización de datos, y la implementación de soluciones basadas en datos para resolver problemas de negocio. Me especializo en identificar patrones y tendencias que ayudan a las organizaciones a tomar decisiones más informadas.
+                Me especializo en el desarrollo de arquitecturas de redes neuronales, procesamiento de lenguaje natural (NLP), y sistemas de recomendación. Mi enfoque combina un profundo entendimiento teórico con habilidades prácticas en MLOps, asegurando que los modelos no solo sean precisos sino también robustos y mantenibles en entornos de producción.
               </p>
               <p className="mt-4" data-id="8xkwoy9xg" data-path="scripts/components.js">
-                Constantemente me mantengo actualizado con las últimas herramientas y metodologías en el campo de la ciencia de datos para ofrecer análisis de alta calidad y resultados impactantes.
+                Constantemente me mantengo al día con los últimos avances en IA, participando en proyectos de investigación y contribuyendo a la comunidad de código abierto. Mi objetivo es crear sistemas de IA que sean no solo técnicamente avanzados, sino también éticos y accesibles.
               </p>
             </div>
           </FadeInSection>
@@ -121,13 +124,43 @@ function About() {
 
 function Skills() {
   const skillsData = [
-  { name: "Análisis de Datos", icon: "fa-chart-bar", description: "Análisis exploratorio de datos (EDA), estadística descriptiva e inferencial", percent: 90 },
-  { name: "Visualización", icon: "fa-chart-pie", description: "Creación de dashboards interactivos y visualizaciones efectivas", percent: 85 },
-  { name: "Python", icon: "fa-python", description: "pandas, NumPy, scikit-learn, matplotlib, seaborn", percent: 80 },
-  { name: "SQL", icon: "fa-database", description: "Consultas complejas, optimización de bases de datos, ETL", percent: 75 },
-  { name: "Machine Learning", icon: "fa-robot", description: "Clasificación, regresión, clustering, series temporales", percent: 70 },
-  { name: "Herramientas BI", icon: "fa-desktop", description: "Tableau, Power BI, Looker Studio", percent: 85 }];
-
+    { 
+      name: "Deep Learning", 
+      icon: "fa-brain", 
+      description: "Redes neuronales, CNN, RNN, Transformers, arquitecturas de modelos avanzadas", 
+      percent: 90 
+    },
+    { 
+      name: "MLOps", 
+      icon: "fa-cogs", 
+      description: "Docker, Kubernetes, CI/CD para ML, monitoreo de modelos, versionado", 
+      percent: 85 
+    },
+    { 
+      name: "Python & Frameworks", 
+      icon: "fa-python", 
+      description: "PyTorch, TensorFlow, scikit-learn, FastAPI, desarrollo de APIs", 
+      percent: 95 
+    },
+    { 
+      name: "NLP & Computer Vision", 
+      icon: "fa-eye", 
+      description: "Procesamiento de lenguaje natural, visión por computadora, modelos multimodales", 
+      percent: 85 
+    },
+    { 
+      name: "Big Data & Cloud", 
+      icon: "fa-cloud", 
+      description: "AWS, GCP, procesamiento distribuido, Spark, gestión de datos a escala", 
+      percent: 80 
+    },
+    { 
+      name: "Investigación & Desarrollo", 
+      icon: "fa-flask", 
+      description: "Investigación en IA, papers, experimentación, optimización de modelos", 
+      percent: 85 
+    }
+  ];
 
   const chartData = skillsData.map((skill, index) => ({
     value: skill.percent,
@@ -175,28 +208,28 @@ function Skills() {
 
 function Projects() {
   const projects = [
-  {
-    title: "Análisis de Ventas Retail",
-    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-    description: "Análisis predictivo de tendencias de ventas y comportamiento del consumidor para una cadena de retail.",
-    tags: ["Python", "Pandas", "Tableau", "Forecasting"],
-    link: "#"
-  },
-  {
-    title: "Dashboard de Métricas de Marketing",
-    image: "https://images.unsplash.com/photo-1533750349088-cd871a92f312?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-    description: "Dashboard interactivo para seguimiento de KPIs de campañas de marketing digital.",
-    tags: ["Power BI", "SQL", "Marketing Analytics"],
-    link: "#"
-  },
-  {
-    title: "Segmentación de Clientes",
-    image: "https://images.unsplash.com/photo-1551836022-d5d88e9218df?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-    description: "Modelo de clustering para segmentar clientes basado en comportamiento de compra y características demográficas.",
-    tags: ["Python", "Machine Learning", "Clustering"],
-    link: "#"
-  }];
-
+    {
+      title: "Sistema de Recomendación con Deep Learning",
+      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+      description: "Desarrollo e implementación de un sistema de recomendación basado en redes neuronales para una plataforma de e-commerce, logrando un 35% de mejora en la precisión de las recomendaciones.",
+      tags: ["Deep Learning", "PyTorch", "MLOps", "Sistemas de Recomendación"],
+      link: "#"
+    },
+    {
+      title: "Modelo de NLP para Análisis de Sentimientos",
+      image: "https://images.unsplash.com/photo-1533750349088-cd871a92f312?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+      description: "Implementación de un modelo Transformer para análisis de sentimientos en tiempo real, desplegado en producción con monitoreo continuo y actualización automática.",
+      tags: ["NLP", "Transformers", "FastAPI", "Docker"],
+      link: "#"
+    },
+    {
+      title: "Sistema de Detección de Anomalías",
+      image: "https://images.unsplash.com/photo-1551836022-d5d88e9218df?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+      description: "Desarrollo de un sistema de detección de anomalías usando autoencoders y aprendizaje no supervisado, implementado en un pipeline de datos en tiempo real.",
+      tags: ["Autoencoders", "TensorFlow", "Kubernetes", "Streaming"],
+      link: "#"
+    }
+  ];
 
   return (
     <section id="projects" className="section" data-id="pj6dxdntm" data-path="scripts/components.js">
@@ -233,42 +266,35 @@ function Projects() {
 }
 
 function Contact() {
-  const [formData, setFormData] = React.useState({
-    name: '',
-    email: '',
-    message: ''
-  });
-
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData((prevData) => ({
-      ...prevData,
-      [name]: value
-    }));
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // In a real application, this would send the form data to a server
-    console.log('Form submitted:', formData);
-    alert('¡Gracias por tu mensaje! Te responderé lo antes posible.');
-    setFormData({
-      name: '',
-      email: '',
-      message: ''
-    });
-  };
-
   return (
-    <section id="contact" className="section" data-id="mrdoppdnq" data-path="scripts/components.js">
-      <div className="container" data-id="jy78rao7y" data-path="scripts/components.js">
+    <section id="contact" className="section" data-id="c32lecih8" data-path="scripts/components.js">
+      <div className="container" data-id="nfv883x4k" data-path="scripts/components.js">
         <FadeInSection>
-          <h2 className="section-title" data-id="xoq4mmj5d" data-path="scripts/components.js">Contacto</h2>
-          <p className="mb-8" data-id="taun1m86p" data-path="scripts/components.js">¿Interesado en trabajar juntos? Ponte en contacto conmigo.</p>
+          <h2 className="section-title" data-id="w817ve008" data-path="scripts/components.js">Contacto</h2>
         </FadeInSection>
-        
-        <div className="contact-container" data-id="shb3bahsa" data-path="scripts/components.js">
+        <div className="contact-grid" data-id="fyv54vx6i" data-path="scripts/components.js">
           <FadeInSection delay={0.2}>
+            <div className="contact-content" data-id="4wjklnhc0" data-path="scripts/components.js">
+              <p data-id="r1mu3qj48" data-path="scripts/components.js">
+                Estoy interesado en oportunidades como Machine Learning Engineer o AI Engineer, donde pueda aplicar mis conocimientos en deep learning, NLP y MLOps para desarrollar soluciones innovadoras. Me apasiona trabajar en proyectos desafiantes que tengan un impacto real en la industria.
+              </p>
+              <p className="mt-4" data-id="up05uznqt" data-path="scripts/components.js">
+                Si estás buscando un profesional que combine experiencia técnica en IA con habilidades prácticas en implementación y despliegue de modelos, me encantaría conectar. Estoy particularmente interesado en roles que involucren investigación aplicada, desarrollo de modelos avanzados y arquitectura de sistemas de ML.
+              </p>
+              <div className="contact-buttons" data-id="contact-buttons">
+                <a href="https://www.linkedin.com/in/adrianblasco/" className="btn btn-primary" target="_blank" rel="noopener noreferrer">
+                  <i className="fab fa-linkedin"></i> LinkedIn
+                </a>
+                <a href="https://github.com/adrianblasco" className="btn btn-secondary" target="_blank" rel="noopener noreferrer">
+                  <i className="fab fa-github"></i> GitHub
+                </a>
+                <a href="mailto:adrianblasco@example.com" className="btn btn-tertiary">
+                  <i className="fas fa-envelope"></i> Email
+                </a>
+              </div>
+            </div>
+          </FadeInSection>
+          <FadeInSection delay={0.4}>
             <div className="contact-info" data-id="5omxyp2w2" data-path="scripts/components.js">
               <ul className="contact-info-list" data-id="f5le7ucex" data-path="scripts/components.js">
                 <li className="contact-info-item" data-id="wfgy95p64" data-path="scripts/components.js">
@@ -302,8 +328,8 @@ function Contact() {
             </div>
           </FadeInSection>
           
-          <FadeInSection delay={0.4}>
-            <form onSubmit={handleSubmit} className="contact-form" data-id="htsiba8ue" data-path="scripts/components.js">
+          <FadeInSection delay={0.6}>
+            <form className="contact-form" data-id="htsiba8ue" data-path="scripts/components.js">
               <div className="contact-form-group" data-id="hzj1zxfog" data-path="scripts/components.js">
                 <label htmlFor="name" className="contact-label" data-id="itnzgud26" data-path="scripts/components.js">Nombre</label>
                 <input
@@ -311,10 +337,7 @@ function Contact() {
                   id="name"
                   name="name"
                   className="contact-input"
-                  value={formData.name}
-                  onChange={handleChange}
                   required data-id="8tmnfvqxi" data-path="scripts/components.js" />
-
               </div>
               <div className="contact-form-group" data-id="9502b2xl9" data-path="scripts/components.js">
                 <label htmlFor="email" className="contact-label" data-id="0h9nc78io" data-path="scripts/components.js">Email</label>
@@ -323,10 +346,7 @@ function Contact() {
                   id="email"
                   name="email"
                   className="contact-input"
-                  value={formData.email}
-                  onChange={handleChange}
                   required data-id="7wl7adp9v" data-path="scripts/components.js" />
-
               </div>
               <div className="contact-form-group" data-id="mmbo1indk" data-path="scripts/components.js">
                 <label htmlFor="message" className="contact-label" data-id="96ls0vz5o" data-path="scripts/components.js">Mensaje</label>
@@ -334,8 +354,6 @@ function Contact() {
                   id="message"
                   name="message"
                   className="contact-textarea"
-                  value={formData.message}
-                  onChange={handleChange}
                   required data-id="mdu77sq8i" data-path="scripts/components.js">
                 </textarea>
               </div>
