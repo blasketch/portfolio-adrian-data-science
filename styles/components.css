@@ -203,20 +203,71 @@
 .about-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 2rem;
+  gap: 3rem;
   align-items: center;
 }
 
-.about-image {
-  border-radius: 8px;
-  overflow: hidden;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+.about-content {
+  background: var(--card-bg);
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: var(--card-shadow);
 }
 
-.about-image img {
+.about-content p {
+  color: var(--text-secondary);
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+}
+
+.about-content p:last-child {
+  margin-bottom: 0;
+}
+
+.about-image-container {
+  position: relative;
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: var(--card-shadow);
+  aspect-ratio: 4/3;
+  background: var(--card-bg);
+  transition: transform 0.3s ease;
+}
+
+.about-image-container:hover {
+  transform: translateY(-5px);
+}
+
+.about-image {
   width: 100%;
-  height: auto;
-  display: block;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.5s ease;
+}
+
+.about-image-container:hover .about-image {
+  transform: scale(1.05);
+}
+
+.about-image-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    45deg,
+    rgba(0, 0, 0, 0.7) 0%,
+    rgba(0, 0, 0, 0.3) 50%,
+    rgba(0, 0, 0, 0.1) 100%
+  );
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+}
+
+.about-image-container:hover .about-image-overlay {
+  opacity: 0.4;
 }
 
 /* Skills Section */
@@ -672,21 +723,20 @@
 }
 
 /* Responsive Updates */
-@media (max-width: 768px) {
-  .contact-buttons {
-    flex-direction: column;
-  }
-  
-  .contact-buttons .btn {
-    width: 100%;
-    justify-content: center;
-  }
-  
-  .skills-grid {
+@media (max-width: 1024px) {
+  .about-grid {
     grid-template-columns: 1fr;
+    gap: 2rem;
   }
-  
-  .hero-subtitle {
-    font-size: 1.25rem;
+
+  .about-image-container {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-image-container {
+    aspect-ratio: 16/9;
   }
 }
