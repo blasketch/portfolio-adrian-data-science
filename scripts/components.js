@@ -285,9 +285,6 @@ function Contact() {
                 <a href="https://www.linkedin.com/in/adrianblasco/" className="btn btn-primary" target="_blank" rel="noopener noreferrer">
                   <i className="fab fa-linkedin"></i> LinkedIn
                 </a>
-                <a href="https://github.com/blasketch" className="btn btn-secondary" target="_blank" rel="noopener noreferrer">
-                  <i className="fab fa-github"></i> GitHub
-                </a>
                 <a href="mailto:newadrianblasco@gmail.com" className="btn btn-tertiary">
                   <i className="fas fa-envelope"></i> Email
                 </a>
@@ -317,11 +314,11 @@ function Contact() {
                 </li>
                 <li className="contact-info-item" data-id="15xqceybg" data-path="scripts/components.js">
                   <div className="contact-icon" data-id="d9t4xnxum" data-path="scripts/components.js">
-                    <i className="fab fa-github" data-id="6cqp1y61n" data-path="scripts/components.js"></i>
+                    <i className="fab fa-linkedin" data-id="6cqp1y61n" data-path="scripts/components.js"></i>
                   </div>
                   <div data-id="e2s0zo3hg" data-path="scripts/components.js">
-                    <h3 className="font-medium" data-id="sqssi0h4n" data-path="scripts/components.js">GitHub</h3>
-                    <p data-id="vonte7dcj" data-path="scripts/components.js"><a href="https://github.com/blasketch" target="_blank" rel="noopener noreferrer" data-id="fmypyaqfl" data-path="scripts/components.js">github.com/blasketch</a></p>
+                    <h3 className="font-medium" data-id="sqssi0h4n" data-path="scripts/components.js">LinkedIn</h3>
+                    <p data-id="vonte7dcj" data-path="scripts/components.js"><a href="https://www.linkedin.com/in/adrianblasco/" target="_blank" rel="noopener noreferrer" data-id="fmypyaqfl" data-path="scripts/components.js">linkedin.com/in/adrianblasco</a></p>
                   </div>
                 </li>
               </ul>
