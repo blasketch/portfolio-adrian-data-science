@@ -285,10 +285,10 @@ function Contact() {
                 <a href="https://www.linkedin.com/in/adrianblasco/" className="btn btn-primary" target="_blank" rel="noopener noreferrer">
                   <i className="fab fa-linkedin"></i> LinkedIn
                 </a>
-                <a href="https://github.com/adrianblasco" className="btn btn-secondary" target="_blank" rel="noopener noreferrer">
+                <a href="https://github.com/blasketch/" className="btn btn-secondary" target="_blank" rel="noopener noreferrer">
                   <i className="fab fa-github"></i> GitHub
                 </a>
-                <a href="mailto:adrianblasco@example.com" className="btn btn-tertiary">
+                <a href="newadrianblasco@gmail.com" className="btn btn-tertiary">
                   <i className="fas fa-envelope"></i> Email
                 </a>
               </div>
