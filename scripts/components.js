@@ -285,10 +285,10 @@ function Contact() {
                 <a href="https://www.linkedin.com/in/adrianblasco/" className="btn btn-primary" target="_blank" rel="noopener noreferrer">
                   <i className="fab fa-linkedin"></i> LinkedIn
                 </a>
-                <a href="https://github.com/blasketch/" className="btn btn-secondary" target="_blank" rel="noopener noreferrer">
+                <a href="https://github.com/blasketch" className="btn btn-secondary" target="_blank" rel="noopener noreferrer">
                   <i className="fab fa-github"></i> GitHub
                 </a>
-                <a href="newadrianblasco@gmail.com" className="btn btn-tertiary">
+                <a href="mailto:newadrianblasco@gmail.com" className="btn btn-tertiary">
                   <i className="fas fa-envelope"></i> Email
                 </a>
               </div>
@@ -303,7 +303,7 @@ function Contact() {
                   </div>
                   <div data-id="2etyhertf" data-path="scripts/components.js">
                     <h3 className="font-medium" data-id="xgboagbwk" data-path="scripts/components.js">Email</h3>
-                    <p data-id="lsn6qnotc" data-path="scripts/components.js">adrian.blasco@ejemplo.com</p>
+                    <p data-id="lsn6qnotc" data-path="scripts/components.js">newadrianblasco@gmail.com</p>
                   </div>
                 </li>
                 <li className="contact-info-item" data-id="7nvi3srz4" data-path="scripts/components.js">
@@ -317,11 +317,11 @@ function Contact() {
                 </li>
                 <li className="contact-info-item" data-id="15xqceybg" data-path="scripts/components.js">
                   <div className="contact-icon" data-id="d9t4xnxum" data-path="scripts/components.js">
-                    <i className="fab fa-linkedin" data-id="6cqp1y61n" data-path="scripts/components.js"></i>
+                    <i className="fab fa-github" data-id="6cqp1y61n" data-path="scripts/components.js"></i>
                   </div>
                   <div data-id="e2s0zo3hg" data-path="scripts/components.js">
-                    <h3 className="font-medium" data-id="sqssi0h4n" data-path="scripts/components.js">LinkedIn</h3>
-                    <p data-id="vonte7dcj" data-path="scripts/components.js"><a href="#" data-id="fmypyaqfl" data-path="scripts/components.js">linkedin.com/in/adrianblascolozano</a></p>
+                    <h3 className="font-medium" data-id="sqssi0h4n" data-path="scripts/components.js">GitHub</h3>
+                    <p data-id="vonte7dcj" data-path="scripts/components.js"><a href="https://github.com/blasketch" target="_blank" rel="noopener noreferrer" data-id="fmypyaqfl" data-path="scripts/components.js">github.com/blasketch</a></p>
                   </div>
                 </li>
               </ul>
