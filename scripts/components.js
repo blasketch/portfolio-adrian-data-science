@@ -456,63 +456,6 @@ function Skills() {
 function Projects() {
   const projectsRef = React.useRef(null);
 
-  React.useEffect(() => {
-    // Event listener de respaldo usando creación de enlace temporal
-    const handleProjectLinkClick = (e) => {
-      const buttonElement = e.target.closest('button.project-link');
-      if (buttonElement) {
-        const projectUrl = buttonElement.getAttribute('data-project-link');
-        if (projectUrl && projectUrl !== '#' && projectUrl.startsWith('http')) {
-          e.preventDefault();
-          e.stopPropagation();
-          e.stopImmediatePropagation();
-          
-          console.log('Listener - Creando enlace temporal para:', projectUrl);
-          
-          // Crear enlace temporal y hacer clic programático
-          const tempLink = document.createElement('a');
-          tempLink.href = projectUrl;
-          tempLink.target = '_blank';
-          tempLink.rel = 'noopener noreferrer';
-          tempLink.style.display = 'none';
-          document.body.appendChild(tempLink);
-          
-          // Disparar evento de clic nativo
-          const clickEvent = new MouseEvent('click', {
-            view: window,
-            bubbles: true,
-            cancelable: true,
-            buttons: 1
-          });
-          tempLink.dispatchEvent(clickEvent);
-          
-          // También intentar click() directo
-          tempLink.click();
-          
-          // Limpiar
-          setTimeout(() => {
-            if (tempLink.parentNode) {
-              document.body.removeChild(tempLink);
-            }
-          }, 100);
-          
-          return false;
-        }
-      }
-    };
-
-    const container = projectsRef.current;
-    if (container) {
-      container.addEventListener('click', handleProjectLinkClick, true);
-    }
-
-    return () => {
-      if (container) {
-        container.removeEventListener('click', handleProjectLinkClick, true);
-      }
-    };
-  }, []);
-
   const projects = [
     {
       title: "Local LLM Automation Pipeline",
@@ -630,36 +573,15 @@ function Projects() {
                   <button
                     type="button"
                     className="project-link"
-                    data-project-link={project.link}
                     onClick={(e) => {
                       e.preventDefault();
                       e.stopPropagation();
                       e.stopImmediatePropagation();
                       
                       if (project.link && project.link !== '#' && project.link.startsWith('http')) {
-                        console.log('Intentando abrir:', project.link);
-                        
-                        // Método 1: Crear un enlace temporal y hacer clic programáticamente
-                        const tempLink = document.createElement('a');
-                        tempLink.href = project.link;
-                        tempLink.target = '_blank';
-                        tempLink.rel = 'noopener noreferrer';
-                        tempLink.style.display = 'none';
-                        document.body.appendChild(tempLink);
-                        
-                        // Hacer clic programático en el enlace
-                        tempLink.click();
-                        
-                        // Limpiar después de un breve delay
-                        setTimeout(() => {
-                          document.body.removeChild(tempLink);
-                        }, 100);
+                        // Navegar directamente a la URL, cambiando la barra de direcciones
+                        window.location.href = project.link;
                       }
-                      
-                      return false;
-                    }}
-                    onMouseDown={(e) => {
-                      e.stopPropagation();
                     }}
                     style={{ 
                       cursor: project.link && project.link !== '#' ? 'pointer' : 'default', 
