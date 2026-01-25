@@ -567,16 +567,25 @@ function Projects() {
                   >
                     {project.description}
                   </p>
-                  <a
-                    href={project.link}
+                  <button
+                    type="button"
                     className="project-link"
-                    target="_blank"
-                    rel="noopener noreferrer"
                     onClick={(e) => {
+                      e.stopPropagation();
                       if (project.link && project.link !== '#') {
-                        e.preventDefault();
                         window.open(project.link, '_blank', 'noopener,noreferrer');
                       }
+                    }}
+                    style={{ 
+                      cursor: 'pointer', 
+                      position: 'relative', 
+                      zIndex: 10,
+                      background: 'none',
+                      border: 'none',
+                      padding: 0,
+                      font: 'inherit',
+                      color: 'inherit',
+                      textDecoration: 'none'
                     }}
                     data-id="82hk8a6u5"
                     data-path="scripts/components.js"
@@ -587,7 +596,7 @@ function Projects() {
                       data-id="ltx0i7ztf"
                       data-path="scripts/components.js"
                     ></i>
-                  </a>
+                  </button>
                 </div>
               </div>
             </FadeInSection>
