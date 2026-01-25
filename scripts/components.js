@@ -457,32 +457,34 @@ function Projects() {
   const projectsRef = React.useRef(null);
 
   React.useEffect(() => {
-    // Agregar event listeners directamente al DOM para evitar interceptaciones
+    // Event listener de respaldo para asegurar que funcione
     const handleProjectLinkClick = (e) => {
-      const buttonElement = e.target.closest('.project-link');
-      if (buttonElement && buttonElement.tagName === 'BUTTON') {
-        // Obtener la URL del atributo data-project-link
+      const buttonElement = e.target.closest('button.project-link');
+      if (buttonElement) {
         const projectUrl = buttonElement.getAttribute('data-project-link');
-        
-        // Solo procesar si es un enlace externo (no #)
         if (projectUrl && projectUrl !== '#' && projectUrl.startsWith('http')) {
           e.preventDefault();
           e.stopPropagation();
           e.stopImmediatePropagation();
           console.log('Abriendo proyecto desde listener:', projectUrl);
-          window.open(projectUrl, '_blank', 'noopener,noreferrer');
+          const newWindow = window.open(projectUrl, '_blank', 'noopener,noreferrer');
+          if (!newWindow) {
+            // Si el popup fue bloqueado, intentar navegar directamente
+            window.location.href = projectUrl;
+          }
           return false;
         }
       }
     };
 
-    if (projectsRef.current) {
-      projectsRef.current.addEventListener('click', handleProjectLinkClick, true);
+    const container = projectsRef.current;
+    if (container) {
+      container.addEventListener('click', handleProjectLinkClick, true);
     }
 
     return () => {
-      if (projectsRef.current) {
-        projectsRef.current.removeEventListener('click', handleProjectLinkClick, true);
+      if (container) {
+        container.removeEventListener('click', handleProjectLinkClick, true);
       }
     };
   }, []);
@@ -610,10 +612,18 @@ function Projects() {
                       e.stopPropagation();
                       e.stopImmediatePropagation();
                       if (project.link && project.link !== '#' && project.link.startsWith('http')) {
-                        console.log('Abriendo:', project.link);
-                        window.open(project.link, '_blank', 'noopener,noreferrer');
+                        console.log('Click en botón - Abriendo:', project.link);
+                        const newWindow = window.open(project.link, '_blank', 'noopener,noreferrer');
+                        if (!newWindow || newWindow.closed || typeof newWindow.closed === 'undefined') {
+                          // Si el popup fue bloqueado, usar location.href como fallback
+                          console.log('Popup bloqueado, usando location.href');
+                          window.location.href = project.link;
+                        }
                       }
                       return false;
+                    }}
+                    onMouseDown={(e) => {
+                      e.stopPropagation();
                     }}
                     style={{ 
                       cursor: project.link && project.link !== '#' ? 'pointer' : 'default', 
@@ -627,7 +637,8 @@ function Projects() {
                       border: 'none',
                       padding: 0,
                       font: 'inherit',
-                      color: 'inherit'
+                      color: 'inherit',
+                      outline: 'none'
                     }}
                     data-id="82hk8a6u5"
                     data-path="scripts/components.js"
