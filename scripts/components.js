@@ -572,6 +572,12 @@ function Projects() {
                     className="project-link"
                     target="_blank"
                     rel="noopener noreferrer"
+                    onClick={(e) => {
+                      if (project.link && project.link !== '#') {
+                        e.preventDefault();
+                        window.open(project.link, '_blank', 'noopener,noreferrer');
+                      }
+                    }}
                     data-id="82hk8a6u5"
                     data-path="scripts/components.js"
                   >
