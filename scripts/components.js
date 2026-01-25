@@ -459,17 +459,17 @@ function Projects() {
   React.useEffect(() => {
     // Agregar event listeners directamente al DOM para evitar interceptaciones
     const handleProjectLinkClick = (e) => {
-      const linkElement = e.target.closest('.project-link');
-      if (linkElement) {
-        // Obtener la URL del atributo data-project-link o del href original
-        const projectUrl = linkElement.getAttribute('data-project-link') || linkElement.getAttribute('href');
+      const buttonElement = e.target.closest('.project-link');
+      if (buttonElement && buttonElement.tagName === 'BUTTON') {
+        // Obtener la URL del atributo data-project-link
+        const projectUrl = buttonElement.getAttribute('data-project-link');
         
         // Solo procesar si es un enlace externo (no #)
         if (projectUrl && projectUrl !== '#' && projectUrl.startsWith('http')) {
           e.preventDefault();
           e.stopPropagation();
           e.stopImmediatePropagation();
-          console.log('Abriendo proyecto:', projectUrl);
+          console.log('Abriendo proyecto desde listener:', projectUrl);
           window.open(projectUrl, '_blank', 'noopener,noreferrer');
           return false;
         }
@@ -601,20 +601,19 @@ function Projects() {
                   >
                     {project.description}
                   </p>
-                  <a
-                    href={project.link && project.link !== '#' ? project.link : '#'}
+                  <button
+                    type="button"
                     className="project-link"
-                    target={project.link && project.link !== '#' ? "_blank" : undefined}
-                    rel={project.link && project.link !== '#' ? "noopener noreferrer" : undefined}
                     data-project-link={project.link}
                     onClick={(e) => {
+                      e.preventDefault();
+                      e.stopPropagation();
+                      e.stopImmediatePropagation();
                       if (project.link && project.link !== '#' && project.link.startsWith('http')) {
-                        e.preventDefault();
-                        e.stopPropagation();
-                        e.stopImmediatePropagation();
+                        console.log('Abriendo:', project.link);
                         window.open(project.link, '_blank', 'noopener,noreferrer');
-                        return false;
                       }
+                      return false;
                     }}
                     style={{ 
                       cursor: project.link && project.link !== '#' ? 'pointer' : 'default', 
@@ -623,7 +622,12 @@ function Projects() {
                       pointerEvents: 'auto',
                       display: 'inline-flex',
                       alignItems: 'center',
-                      textDecoration: 'none'
+                      textDecoration: 'none',
+                      background: 'none',
+                      border: 'none',
+                      padding: 0,
+                      font: 'inherit',
+                      color: 'inherit'
                     }}
                     data-id="82hk8a6u5"
                     data-path="scripts/components.js"
@@ -634,7 +638,7 @@ function Projects() {
                       data-id="ltx0i7ztf"
                       data-path="scripts/components.js"
                     ></i>
-                  </a>
+                  </button>
                 </div>
               </div>
             </FadeInSection>
