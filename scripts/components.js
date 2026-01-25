@@ -461,7 +461,7 @@ function Projects() {
       description:
         "Sistema autónomo de redacción de contenido tech usando DeepSeek en local sin costes de API.",
       tags: ["n8n", "Docker", "Ollama", "Automation"],
-      link: "#https://github.com/blasketch/automatizacion_linkedin_n8n",
+      link: "https://github.com/blasketch/automatizacion_linkedin_n8n",
     },
     {
       title: "Modelo de NLP para Análisis de Sentimientos",
