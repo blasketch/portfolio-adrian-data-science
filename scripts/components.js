@@ -457,7 +457,7 @@ function Projects() {
   const projectsRef = React.useRef(null);
 
   React.useEffect(() => {
-    // Event listener de respaldo para asegurar que funcione
+    // Event listener de respaldo usando creación de enlace temporal
     const handleProjectLinkClick = (e) => {
       const buttonElement = e.target.closest('button.project-link');
       if (buttonElement) {
@@ -466,12 +466,36 @@ function Projects() {
           e.preventDefault();
           e.stopPropagation();
           e.stopImmediatePropagation();
-          console.log('Abriendo proyecto desde listener:', projectUrl);
-          const newWindow = window.open(projectUrl, '_blank', 'noopener,noreferrer');
-          if (!newWindow) {
-            // Si el popup fue bloqueado, intentar navegar directamente
-            window.location.href = projectUrl;
-          }
+          
+          console.log('Listener - Creando enlace temporal para:', projectUrl);
+          
+          // Crear enlace temporal y hacer clic programático
+          const tempLink = document.createElement('a');
+          tempLink.href = projectUrl;
+          tempLink.target = '_blank';
+          tempLink.rel = 'noopener noreferrer';
+          tempLink.style.display = 'none';
+          document.body.appendChild(tempLink);
+          
+          // Disparar evento de clic nativo
+          const clickEvent = new MouseEvent('click', {
+            view: window,
+            bubbles: true,
+            cancelable: true,
+            buttons: 1
+          });
+          tempLink.dispatchEvent(clickEvent);
+          
+          // También intentar click() directo
+          tempLink.click();
+          
+          // Limpiar
+          setTimeout(() => {
+            if (tempLink.parentNode) {
+              document.body.removeChild(tempLink);
+            }
+          }, 100);
+          
           return false;
         }
       }
@@ -611,15 +635,27 @@ function Projects() {
                       e.preventDefault();
                       e.stopPropagation();
                       e.stopImmediatePropagation();
+                      
                       if (project.link && project.link !== '#' && project.link.startsWith('http')) {
-                        console.log('Click en botón - Abriendo:', project.link);
-                        const newWindow = window.open(project.link, '_blank', 'noopener,noreferrer');
-                        if (!newWindow || newWindow.closed || typeof newWindow.closed === 'undefined') {
-                          // Si el popup fue bloqueado, usar location.href como fallback
-                          console.log('Popup bloqueado, usando location.href');
-                          window.location.href = project.link;
-                        }
+                        console.log('Intentando abrir:', project.link);
+                        
+                        // Método 1: Crear un enlace temporal y hacer clic programáticamente
+                        const tempLink = document.createElement('a');
+                        tempLink.href = project.link;
+                        tempLink.target = '_blank';
+                        tempLink.rel = 'noopener noreferrer';
+                        tempLink.style.display = 'none';
+                        document.body.appendChild(tempLink);
+                        
+                        // Hacer clic programático en el enlace
+                        tempLink.click();
+                        
+                        // Limpiar después de un breve delay
+                        setTimeout(() => {
+                          document.body.removeChild(tempLink);
+                        }, 100);
                       }
+                      
                       return false;
                     }}
                     onMouseDown={(e) => {
