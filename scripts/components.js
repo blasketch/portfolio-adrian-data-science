@@ -456,13 +456,12 @@ function Skills() {
 function Projects() {
   const projects = [
     {
-      title: "Sistema de Recomendación con Deep Learning",
-      image:
-        "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+      title: "Local LLM Automation Pipeline",
+      image: "./assets/images/n8n_workflow.jpg",
       description:
-        "Desarrollo e implementación de un sistema de recomendación basado en redes neuronales para una plataforma de e-commerce, logrando un 35% de mejora en la precisión de las recomendaciones.",
-      tags: ["Deep Learning", "PyTorch", "MLOps", "Sistemas de Recomendación"],
-      link: "#",
+        "Sistema autónomo de redacción de contenido tech usando DeepSeek en local sin costes de API.",
+      tags: ["n8n", "Docker", "Ollama", "Automation"],
+      link: "#https://github.com/blasketch/automatizacion_linkedin_n8n",
     },
     {
       title: "Modelo de NLP para Análisis de Sentimientos",
