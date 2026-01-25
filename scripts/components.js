@@ -460,13 +460,19 @@ function Projects() {
     // Agregar event listeners directamente al DOM para evitar interceptaciones
     const handleProjectLinkClick = (e) => {
       const linkElement = e.target.closest('.project-link');
-      if (linkElement && linkElement.href && linkElement.href !== '#' && !linkElement.href.includes('#')) {
-        e.preventDefault();
-        e.stopPropagation();
-        e.stopImmediatePropagation();
-        console.log('Abriendo proyecto:', linkElement.href);
-        window.open(linkElement.href, '_blank', 'noopener,noreferrer');
-        return false;
+      if (linkElement) {
+        // Obtener la URL del atributo data-project-link o del href original
+        const projectUrl = linkElement.getAttribute('data-project-link') || linkElement.getAttribute('href');
+        
+        // Solo procesar si es un enlace externo (no #)
+        if (projectUrl && projectUrl !== '#' && projectUrl.startsWith('http')) {
+          e.preventDefault();
+          e.stopPropagation();
+          e.stopImmediatePropagation();
+          console.log('Abriendo proyecto:', projectUrl);
+          window.open(projectUrl, '_blank', 'noopener,noreferrer');
+          return false;
+        }
       }
     };
 
@@ -596,12 +602,22 @@ function Projects() {
                     {project.description}
                   </p>
                   <a
-                    href={project.link}
+                    href={project.link && project.link !== '#' ? project.link : '#'}
                     className="project-link"
-                    target="_blank"
-                    rel="noopener noreferrer"
+                    target={project.link && project.link !== '#' ? "_blank" : undefined}
+                    rel={project.link && project.link !== '#' ? "noopener noreferrer" : undefined}
+                    data-project-link={project.link}
+                    onClick={(e) => {
+                      if (project.link && project.link !== '#' && project.link.startsWith('http')) {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        e.stopImmediatePropagation();
+                        window.open(project.link, '_blank', 'noopener,noreferrer');
+                        return false;
+                      }
+                    }}
                     style={{ 
-                      cursor: 'pointer', 
+                      cursor: project.link && project.link !== '#' ? 'pointer' : 'default', 
                       position: 'relative', 
                       zIndex: 9999,
                       pointerEvents: 'auto',
