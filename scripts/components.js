@@ -570,6 +570,8 @@ function Projects() {
                   <a
                     href={project.link}
                     className="project-link"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     data-id="82hk8a6u5"
                     data-path="scripts/components.js"
                   >
