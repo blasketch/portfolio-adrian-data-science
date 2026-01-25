@@ -176,7 +176,8 @@ function FadeInSection({ children, delay = 0 }) {
         opacity: isVisible ? 1 : 0,
         transform: isVisible ? 'translateY(0)' : 'translateY(20px)',
         transition: `opacity 0.6s ease-out, transform 0.6s ease-out`,
-        transitionDelay: `${delay}s`
+        transitionDelay: `${delay}s`,
+        pointerEvents: 'auto'
       }} data-id="c4an85s31" data-path="scripts/animations.js">
 
       {children}

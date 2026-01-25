@@ -454,6 +454,33 @@ function Skills() {
 }
 
 function Projects() {
+  const projectsRef = React.useRef(null);
+
+  React.useEffect(() => {
+    // Agregar event listeners directamente al DOM para evitar interceptaciones
+    const handleProjectLinkClick = (e) => {
+      const linkElement = e.target.closest('.project-link');
+      if (linkElement && linkElement.href && linkElement.href !== '#' && !linkElement.href.includes('#')) {
+        e.preventDefault();
+        e.stopPropagation();
+        e.stopImmediatePropagation();
+        console.log('Abriendo proyecto:', linkElement.href);
+        window.open(linkElement.href, '_blank', 'noopener,noreferrer');
+        return false;
+      }
+    };
+
+    if (projectsRef.current) {
+      projectsRef.current.addEventListener('click', handleProjectLinkClick, true);
+    }
+
+    return () => {
+      if (projectsRef.current) {
+        projectsRef.current.removeEventListener('click', handleProjectLinkClick, true);
+      }
+    };
+  }, []);
+
   const projects = [
     {
       title: "Local LLM Automation Pipeline",
@@ -514,6 +541,7 @@ function Projects() {
         </FadeInSection>
 
         <div
+          ref={projectsRef}
           className="projects-grid"
           data-id="u4008584w"
           data-path="scripts/components.js"
@@ -567,24 +595,18 @@ function Projects() {
                   >
                     {project.description}
                   </p>
-                  <button
-                    type="button"
+                  <a
+                    href={project.link}
                     className="project-link"
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      if (project.link && project.link !== '#') {
-                        window.open(project.link, '_blank', 'noopener,noreferrer');
-                      }
-                    }}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     style={{ 
                       cursor: 'pointer', 
                       position: 'relative', 
-                      zIndex: 10,
-                      background: 'none',
-                      border: 'none',
-                      padding: 0,
-                      font: 'inherit',
-                      color: 'inherit',
+                      zIndex: 9999,
+                      pointerEvents: 'auto',
+                      display: 'inline-flex',
+                      alignItems: 'center',
                       textDecoration: 'none'
                     }}
                     data-id="82hk8a6u5"
@@ -596,7 +618,7 @@ function Projects() {
                       data-id="ltx0i7ztf"
                       data-path="scripts/components.js"
                     ></i>
-                  </button>
+                  </a>
                 </div>
               </div>
             </FadeInSection>
