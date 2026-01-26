@@ -802,6 +802,26 @@ function Contact() {
                       </a>
                     </p>
                   </div>
+                  <div data-id="e2s0zo3hg" data-path="scripts/components.js">
+                    <h3
+                      className="font-medium"
+                      data-id="sqssi0h4n"
+                      data-path="scripts/components.js"
+                    >
+                      LinkedIn
+                    </h3>
+                    <p data-id="vonte7dcj" data-path="scripts/components.js">
+                      <a
+                        href="https://www.linkedin.com/in/adrianblascolozano/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        data-id="fmypyaqfl"
+                        data-path="scripts/components.js"
+                      >
+                        linkedin.com/in/adrianblascolozano
+                      </a>
+                    </p>
+                  </div>
                 </li>
               </ul>
             </div>
