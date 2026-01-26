@@ -577,26 +577,33 @@ function Projects() {
                       e.preventDefault();
                       e.stopPropagation();
                       e.stopImmediatePropagation();
-                      
-                      if (project.link && project.link !== '#' && project.link.startsWith('http')) {
+
+                      if (
+                        project.link &&
+                        project.link !== "#" &&
+                        project.link.startsWith("http")
+                      ) {
                         // Navegar directamente a la URL, cambiando la barra de direcciones
                         window.location.href = project.link;
                       }
                     }}
-                    style={{ 
-                      cursor: project.link && project.link !== '#' ? 'pointer' : 'default', 
-                      position: 'relative', 
+                    style={{
+                      cursor:
+                        project.link && project.link !== "#"
+                          ? "pointer"
+                          : "default",
+                      position: "relative",
                       zIndex: 9999,
-                      pointerEvents: 'auto',
-                      display: 'inline-flex',
-                      alignItems: 'center',
-                      textDecoration: 'none',
-                      background: 'none',
-                      border: 'none',
+                      pointerEvents: "auto",
+                      display: "inline-flex",
+                      alignItems: "center",
+                      textDecoration: "none",
+                      background: "none",
+                      border: "none",
                       padding: 0,
-                      font: 'inherit',
-                      color: 'inherit',
-                      outline: 'none'
+                      font: "inherit",
+                      color: "inherit",
+                      outline: "none",
                     }}
                     data-id="82hk8a6u5"
                     data-path="scripts/components.js"
@@ -655,8 +662,10 @@ function Contact() {
                 Estoy interesado en oportunidades como Machine Learning Engineer
                 o AI Engineer, donde pueda aplicar mis conocimientos en deep
                 learning, NLP y MLOps para desarrollar soluciones innovadoras.
-                Me apasiona trabajar en proyectos desafiantes que tengan un
-                impacto real en la industria.
+                Trabajos como analista de datos, data engineer, data scientist,
+                también son parte de mi perfil. Me apasiona trabajar en
+                proyectos desafiantes que tengan un impacto real en la
+                industria.
               </p>
               <p
                 className="mt-4"
@@ -672,7 +681,7 @@ function Contact() {
               </p>
               <div className="contact-buttons" data-id="contact-buttons">
                 <a
-                  href="https://www.linkedin.com/in/adrianblasco/"
+                  href="https://www.linkedin.com/in/adrianblascolozano/"
                   className="btn btn-primary"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -753,7 +762,7 @@ function Contact() {
                       Ubicación
                     </h3>
                     <p data-id="vhlhqoo9m" data-path="scripts/components.js">
-                      Madrid, España
+                      Valencia, España
                     </p>
                   </div>
                 </li>
@@ -783,13 +792,13 @@ function Contact() {
                     </h3>
                     <p data-id="vonte7dcj" data-path="scripts/components.js">
                       <a
-                        href="https://www.linkedin.com/in/adrianblasco/"
+                        href="https://www.linkedin.com/in/adrianblascolozano/"
                         target="_blank"
                         rel="noopener noreferrer"
                         data-id="fmypyaqfl"
                         data-path="scripts/components.js"
                       >
-                        linkedin.com/in/adrianblasco
+                        linkedin.com/in/adrianblascolozano
                       </a>
                     </p>
                   </div>
