@@ -802,23 +802,40 @@ function Contact() {
                       </a>
                     </p>
                   </div>
+                </li>
+                <li
+                  className="contact-info-item"
+                  data-id="15xqceybg"
+                  data-path="scripts/components.js"
+                >
+                  <div
+                    className="contact-icon"
+                    data-id="d9t4xnxum"
+                    data-path="scripts/components.js"
+                  >
+                    <i
+                      className="fab fa-github"
+                      data-id="6cqp1y61n"
+                      data-path="scripts/components.js"
+                    ></i>
+                  </div>
                   <div data-id="e2s0zo3hg" data-path="scripts/components.js">
                     <h3
                       className="font-medium"
                       data-id="sqssi0h4n"
                       data-path="scripts/components.js"
                     >
-                      LinkedIn
+                      GitHub
                     </h3>
                     <p data-id="vonte7dcj" data-path="scripts/components.js">
                       <a
-                        href="https://www.linkedin.com/in/adrianblascolozano/"
+                        href="https://github.com/blasketch"
                         target="_blank"
                         rel="noopener noreferrer"
                         data-id="fmypyaqfl"
                         data-path="scripts/components.js"
                       >
-                        linkedin.com/in/adrianblascolozano
+                        github.com/blasketch
                       </a>
                     </p>
                   </div>
