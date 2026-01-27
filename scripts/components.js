@@ -466,14 +466,15 @@ function Projects() {
       link: "https://github.com/blasketch/automatizacion_linkedin_n8n",
     },
     {
-      title: "Modelo de NLP para Análisis de Sentimientos",
+      title: "Detector de Spam con spaCy",
       image:
         "https://images.unsplash.com/photo-1533750349088-cd871a92f312?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
       description:
-        "Implementación de un modelo Transformer para análisis de sentimientos en tiempo real, desplegado en producción con monitoreo continuo y actualización automática.",
-      tags: ["NLP", "Transformers", "FastAPI", "Docker"],
-      link: "https://github.com/blasketch/automatizacion_linkedin_n8n",
+        "Modelo de NLP entrenado con spaCy para clasificación de correos spam/no spam, utilizando datasets de Kaggle para el entrenamiento y validación del modelo.",
+      tags: ["spaCy", "NLP", "Python", "Jupyter Notebook", "Kaggle"],
+      link: "https://github.com/blasketch/detector_spam_spacy",
     },
+
     {
       title: "Sistema de Detección de Anomalías",
       image:
