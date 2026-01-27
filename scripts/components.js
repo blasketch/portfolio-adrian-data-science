@@ -472,7 +472,7 @@ function Projects() {
       description:
         "Implementación de un modelo Transformer para análisis de sentimientos en tiempo real, desplegado en producción con monitoreo continuo y actualización automática.",
       tags: ["NLP", "Transformers", "FastAPI", "Docker"],
-      link: "#",
+      link: "https://github.com/blasketch/automatizacion_linkedin_n8n",
     },
     {
       title: "Sistema de Detección de Anomalías",
@@ -481,7 +481,7 @@ function Projects() {
       description:
         "Desarrollo de un sistema de detección de anomalías usando autoencoders y aprendizaje no supervisado, implementado en un pipeline de datos en tiempo real.",
       tags: ["Autoencoders", "TensorFlow", "Kubernetes", "Streaming"],
-      link: "#",
+      link: "https://github.com/blasketch/tu-repositorio-3", // Cambia por tu repo real
     },
   ];
 
@@ -570,41 +570,11 @@ function Projects() {
                   >
                     {project.description}
                   </p>
-                  <button
-                    type="button"
+                  <a // ← AQUÍ está la apertura de la etiqueta <a>
+                    href={project.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="project-link"
-                    onClick={(e) => {
-                      e.preventDefault();
-                      e.stopPropagation();
-                      e.stopImmediatePropagation();
-
-                      if (
-                        project.link &&
-                        project.link !== "#" &&
-                        project.link.startsWith("http")
-                      ) {
-                        // Navegar directamente a la URL, cambiando la barra de direcciones
-                        window.location.href = project.link;
-                      }
-                    }}
-                    style={{
-                      cursor:
-                        project.link && project.link !== "#"
-                          ? "pointer"
-                          : "default",
-                      position: "relative",
-                      zIndex: 9999,
-                      pointerEvents: "auto",
-                      display: "inline-flex",
-                      alignItems: "center",
-                      textDecoration: "none",
-                      background: "none",
-                      border: "none",
-                      padding: 0,
-                      font: "inherit",
-                      color: "inherit",
-                      outline: "none",
-                    }}
                     data-id="82hk8a6u5"
                     data-path="scripts/components.js"
                   >
@@ -614,7 +584,7 @@ function Projects() {
                       data-id="ltx0i7ztf"
                       data-path="scripts/components.js"
                     ></i>
-                  </button>
+                  </a>
                 </div>
               </div>
             </FadeInSection>
@@ -624,7 +594,6 @@ function Projects() {
     </section>
   );
 }
-
 function Contact() {
   return (
     <section
