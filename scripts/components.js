@@ -468,7 +468,7 @@ function Projects() {
     {
       title: "Detector de Spam con spaCy",
       image:
-        "https://images.unsplash.com/photo-1533750349088-cd871a92f312?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+        "./assets/images/stock-vector-spam-detection-concept-ai-filters-the-clutter-ensuring-email-integrity-and-user-protection-2402082111.jpg",
       description:
         "Modelo de NLP entrenado con spaCy para clasificación de correos spam/no spam, utilizando datasets de Kaggle para el entrenamiento y validación del modelo.",
       tags: ["spaCy", "NLP", "Python", "Jupyter Notebook", "Kaggle"],
