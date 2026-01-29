@@ -479,7 +479,7 @@ function Projects() {
       image:
         "https://images.unsplash.com/photo-1507925921958-8a62f3d1a50d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
       description:
-        "Sistema de Chat con Documentos (Chat with PDF) que utiliza LLMs locales y una base de datos vectorial para responder preguntas citando la fuente exacta. Implementa una arquitectura RAG (Retrieval-Augmented Generation) para eliminar alucinaciones y garantizar la privacidad de los datos.",
+        "Sistema de Chat con documentos (Chat with PDF) que utiliza LLMs locales y una base de datos vectorial para responder preguntas citando la fuente exacta. Implementa una arquitectura RAG (Retrieval-Augmented Generation) para eliminar alucinaciones y garantizar la privacidad de los datos.",
       tags: ["LangChain", "RAG", "Streamlit", "ChromaDB", "LLMs"],
       link: "https://github.com/blasketch/rag-pdf-assistant",
     },
