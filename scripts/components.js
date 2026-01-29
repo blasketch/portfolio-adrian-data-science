@@ -174,7 +174,7 @@ function Hero() {
                 data-path="scripts/components.js"
               >
                 <TypedText
-                  text="Machine Learning Engineer especializado en desarrollo e implementación de modelos de IA"
+                  text="Machine Learning Engineer & Systems Background. Construyo y despliego soluciones de Inteligencia Artificial escalables."
                   speed={50}
                 />
               </h2>
@@ -247,36 +247,36 @@ function About() {
               data-path="scripts/components.js"
             >
               <p data-id="r1mu3qj48" data-path="scripts/components.js">
-                Soy un Machine Learning Engineer apasionado por desarrollar e
-                implementar soluciones de IA que resuelven problemas reales. Mi
-                experiencia abarca desde el desarrollo de modelos de deep
-                learning hasta la implementación de sistemas de ML en
-                producción, con un enfoque especial en la escalabilidad y
-                eficiencia de los modelos.
+                Soy un Machine Learning Engineer con base en sistemas
+                informáticos. A diferencia del perfil de datos tradicional, mi
+                trayectoria en administración de infraestructuras IT me permite
+                tener una visión completa del ciclo de vida del dato: desde el
+                entrenamiento de modelos de Deep Learning hasta su despliegue
+                robusto en producción.
               </p>
               <p
                 className="mt-4"
                 data-id="up05uznqt"
                 data-path="scripts/components.js"
               >
-                Me especializo en el desarrollo de arquitecturas de redes
-                neuronales, procesamiento de lenguaje natural (NLP), y sistemas
-                de recomendación, además de creación de flujos de trabajo de IA,
-                actualmente con n8n. Mi enfoque combina un profundo
-                entendimiento teórico con habilidades prácticas en MLOps,
-                asegurando que los modelos no solo sean precisos sino también
-                robustos y mantenibles en entornos de producción.
+                Me especializo en NLP y arquitecturas neuronales, combinando la
+                precisión matemática con la eficiencia operativa. Actualmente,
+                integro flujos de trabajo de IA con herramientas de
+                automatización como n8n, asegurando soluciones escalables. Busco
+                construir sistemas de IA que no solo sean innovadores, sino
+                también estables, éticos y mantenibles a largo plazo.
               </p>
               <p
                 className="mt-4"
                 data-id="8xkwoy9xg"
                 data-path="scripts/components.js"
               >
-                Constantemente me mantengo al día con los últimos avances en IA,
-                participando en proyectos de investigación y contribuyendo a la
-                comunidad de código abierto. Mi objetivo es crear sistemas de IA
-                que sean no solo técnicamente avanzados, sino también éticos y
-                accesibles.
+                Mi experiencia técnica previa me ha enseñado que el mejor modelo
+                es el que funciona de forma eficiente en el mundo real. Por
+                ello, aplico principios de MLOps y escalabilidad en cada
+                proyecto, garantizando que la innovación técnica se traduzca en
+                valor tangible. Aprendiz continuo, entusiasta del código abierto
+                y firme defensor de una IA ética y accesible.
               </p>
             </div>
           </FadeInSection>
@@ -319,32 +319,32 @@ function About() {
 function Skills() {
   const skillsData = [
     {
-      name: "Deep Learning",
+      name: "Deep IA Generativa & Deep Learning",
       icon: "fa-brain",
       description:
-        "Redes neuronales, CNN, RNN, Transformers, arquitecturas de modelos avanzadas",
+        "Redes neuronales, LLMs, RAG, Transformers, Fine-tuning, PyTorch, TensorFlow. Creación de modelos avanzados.",
       percent: 90,
     },
     {
-      name: "MLOps",
-      icon: "fa-cogs",
+      name: "MLOps & Infraestructura IT",
+      icon: "fa-server",
       description:
-        "Docker, Kubernetes, CI/CD para ML, monitoreo de modelos, versionado",
-      percent: 85,
-    },
-    {
-      name: "Python & Frameworks",
-      icon: "fa-python",
-      description:
-        "PyTorch, TensorFlow, scikit-learn, FastAPI, desarrollo de APIs",
+        "DDocker, Kubernetes, Linux SysAdmin, Gestión de Redes, CI/CD y despliegue robusto de modelos.",
       percent: 95,
     },
     {
-      name: "NLP & Computer Vision",
-      icon: "fa-eye",
+      name: "Automatización & Agentes de IA",
+      icon: "fa-robot",
       description:
-        "Procesamiento de lenguaje natural, visión por computadora, modelos multimodales",
-      percent: 85,
+        "Orquestación de flujos con n8n, Web Scraping, Automatización de procesos y Agentes autónomos.",
+      percent: 90,
+    },
+    {
+      name: "Python & Backend Engineering",
+      icon: "fab fa-python",
+      description:
+        "PyTorch, TensorFlow, scikit-learn, FastAPI, microservicios, Desarrollo de APIs REST, Scripting y optimización de código.",
+      percent: 95,
     },
     {
       name: "Big Data & Cloud",
@@ -354,10 +354,10 @@ function Skills() {
       percent: 80,
     },
     {
-      name: "Investigación & Desarrollo",
-      icon: "fa-flask",
+      name: "NLP & Computer Vision",
+      icon: "fa-eye",
       description:
-        "Investigación en IA, papers, experimentación, optimización de modelos",
+        "Procesamiento de lenguaje natural, visión por computadora, modelos multimodales",
       percent: 85,
     },
   ];
@@ -474,15 +474,14 @@ function Projects() {
       tags: ["spaCy", "NLP", "Python", "Jupyter Notebook", "Kaggle"],
       link: "https://github.com/blasketch/detector_spam_spacy",
     },
-
     {
-      title: "Sistema de Detección de Anomalías",
+      title: "Asistente RAG con citas de fuentes",
       image:
-        "https://images.unsplash.com/photo-1551836022-d5d88e9218df?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1507925921958-8a62f3d1a50d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
       description:
-        "Desarrollo de un sistema de detección de anomalías usando autoencoders y aprendizaje no supervisado, implementado en un pipeline de datos en tiempo real.",
-      tags: ["Autoencoders", "TensorFlow", "Kubernetes", "Streaming"],
-      link: "https://github.com/blasketch/tu-repositorio-3", // Cambia por tu repo real
+        "Sistema de Chat con Documentos (Chat with PDF) que utiliza LLMs locales y una base de datos vectorial para responder preguntas citando la fuente exacta. Implementa una arquitectura RAG (Retrieval-Augmented Generation) para eliminar alucinaciones y garantizar la privacidad de los datos.",
+      tags: ["LangChain", "RAG", "Streamlit", "ChromaDB", "LLMs"],
+      link: "https://github.com/blasketch/rag-pdf-assistant",
     },
   ];
 
@@ -571,7 +570,7 @@ function Projects() {
                   >
                     {project.description}
                   </p>
-                  <a // ← AQUÍ está la apertura de la etiqueta <a>
+                  <a
                     href={project.link}
                     target="_blank"
                     rel="noopener noreferrer"
